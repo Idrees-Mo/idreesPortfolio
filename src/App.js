@@ -1,19 +1,22 @@
 import React from 'react';
+
 import { GlobalStyles } from './globalStyle'
 import AsideBar from './components/AsideBar'
 import Main from './components/Main'
-
+import styled from 'styled-components';
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <div class="main-container">
+      <AppContainer>
         <AsideBar />
         <Main />
-      </div>
+      </AppContainer>
     </>
   );
 }
 
+const AppContainer = styled.div`
+`
 export default App; 

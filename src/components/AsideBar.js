@@ -6,14 +6,15 @@ const AsideBar = () => {
   return (
     <Aside>
       <Logo class="logo">
-        <LinkR to="#">
+        <LinkR to="/">
           Idrees
         </LinkR>
       </Logo>
       <Nav class="nav">
-        <ListItem><PageLink href="#" className="active"><i className='fa fa-home'></i>Home</PageLink></ListItem>
-        <ListItem><PageLink href="#"><i className='fa fa-briefcase'></i>Project</PageLink></ListItem>
-        <ListItem><PageLink href="#"><i className='fa fa-envelope'></i>Contact</PageLink></ListItem>
+        <ListItem><PageLink to="/" active><i className='fa fa-home'></i>Home</PageLink></ListItem>
+        <ListItem><PageLink to="/projects"><i className='fa fa-briefcase'></i>Projects</PageLink></ListItem>
+        <ListItem><PageLink to="/about" className="bg"><i className='fa fa-user'></i>About</PageLink></ListItem>
+        <ListItem><PageLink to="/contact"><i className='fa fa-envelope'></i>Contact</PageLink></ListItem>
       </Nav>
 
       <Copyright>
@@ -79,25 +80,30 @@ const Nav = styled.ul`
 const ListItem = styled.li`
 display: block;
 border-bottom: 1px solid #e8dfec;
--webkit-transition: all 0.3s ease;
-transition: all 0.3s ease;
-:not(.active):hover{
-  padding-left: 5px;
-}
-:hover , .active {
-  color:tomato;
-}
+
+
 `
 const PageLink = styled(Link)`
 font-size: 16px;
 font-weight: 600;
-color:#302e4d;
-line-height: 45px;
+color:${props => props.active ? 'tomato' : '#302e4d'};
+line-height: 55px;
 display: block;
+-webkit-transition: all 0.3s ease;
+transition: all 0.2s ease;
+.fa {
+  margin-right: 7px;
+}
+:hover{
+padding-left: ${props => props.active ? '0' : '5px'};
+color:tomato;
+}
 `
+
 const Copyright = styled.div`
-  background-color: #ededed;
+  /* background-color: #ededed; */
   font-size:13px;
+  color:#7d7d7d;
 `
 
 
