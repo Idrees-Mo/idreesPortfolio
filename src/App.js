@@ -1,20 +1,19 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyles from './gobalStyles';
-import Header from './components/Header/Header'
-import Navbar from './components/Navbar/Navbar'
-import Main from './components/Main/Main'
+import { GlobalStyles } from './globalStyle'
+import AsideBar from './components/AsideBar'
+import Main from './components/Main'
 
-function App() {
-  const theme = {}
+
+const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyles />
-      <Header />
-      <Navbar />
-      <Main />
-    </ThemeProvider>
+      <div class="main-container">
+        <AsideBar />
+        <Main />
+      </div>
+    </>
   );
 }
 
-export default App;
+export default App; 
